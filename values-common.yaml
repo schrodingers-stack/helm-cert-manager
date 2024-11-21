@@ -1,0 +1,43 @@
+cert-manager:
+
+  installCRDs: true
+  prometheus:
+    serviceMontior:
+      enabled: false
+
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      memory: 128Mi
+
+  webhook:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        memory: 128Mi
+  
+  cainjector:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        memory: 128Mi
+
+  startupapicheck:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        memory: 128Mi
+
+# TODO Add the Schrödinger's Stack templates configuration here to add the custom resources required
+schtack:
