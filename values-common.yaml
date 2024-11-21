@@ -2,7 +2,7 @@ cert-manager:
 
   installCRDs: true
   prometheus:
-    serviceMontior:
+    servicemonitor:
       enabled: false
 
   replicaCount: 1
