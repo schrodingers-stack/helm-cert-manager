@@ -50,6 +50,7 @@ schtack:
       enabled: true
       name: selfsigned-issuer
 
+    # TODO Add the ExternalSecret object to get the CA key pair from the external secret store
     selfSignedCA:
       enabled: false
       name: selfsigned-ca-issuer
@@ -58,7 +59,7 @@ schtack:
     letsencrypt:
       enabled: false
       acmeSolvers:
-      # TODO Add support for the acme solver configuration in the letsencrypt cluster issuers
+      # TODO Add support for the acme solver configuration in the Let's Encrypt cluster issuers
       - http01:
           ingress: {}
       issuers:
