@@ -39,5 +39,30 @@ cert-manager:
       limits:
         memory: 128Mi
 
-# TODO Add the Schrödinger's Stack templates configuration here to add the custom resources required
 schtack:
+
+  additionalLabels: {}
+
+  clusterIssuers:
+
+    selfSignedCerts:
+      enabled: true
+      name: selfsigned-issuer
+
+    selfSignedCA:
+      enabled: false
+      name: selfsigned-ca-issuer
+      secretName: self-signed-ca-key-pair
+    
+    letsencrypt:
+      enabled: false
+      acmeSolvers:
+      - http01:
+          ingress: {}
+      issuers:
+      - name: letsencrypt-staging-issuer
+        email: letsencrypt@example.org
+        server: https://acme-staging-v02.api.letsencrypt.org/directory
+      - name: letsencrypt-production-issuer
+        email: letsencrypt@example.org
+        server: https://acme-v02.api.letsencrypt.org/directory

@@ -1,0 +1,51 @@
+{{- if $.Values.schtack.clusterIssuers.selfSignedCerts.enabled }}
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ $.Values.schtack.clusterIssuers.selfSignedCerts.name | quote }}
+  labels:
+    {{- include "schtack.labels" (dict "context" $ ) | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  selfSigned: {}
+{{- end -}}
+
+
+{{- if $.Values.schtack.clusterIssuers.selfSignedCA.enabled }}
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ $.Values.schtack.clusterIssuers.selfSignedCA.name | quote }}
+  labels:
+    {{- include "schtack.labels" (dict "context" $ ) | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  ca:
+    secretName: {{  $.Values.schtack.clusterIssuers.selfSignedCerts.secretName }}
+{{- end -}}
+
+{{- if $.Values.schtack.clusterIssuers.letsencrypt.enabled }}
+{{- range $issuer := $.Values.schtack.clusterIssuers.letsencrypt.issuers }}
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ $issuer.name }}
+  labels:
+    {{- include "schtack.labels" (dict "context" $ ) | nindent 4 }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  acme:
+    email: {{ $issuer.email }}
+    server: {{ $issuer.server }}
+    privateKeySecretRef:
+      name: {{ $issuer.name }}
+    # TODO Add acme solver configuration here
+{{- end }}
+{{- end -}}
+
