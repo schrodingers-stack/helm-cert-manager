@@ -1,5 +1,4 @@
 cert-manager:
-
   installCRDs: true
   prometheus:
     servicemonitor:
@@ -39,10 +38,12 @@ cert-manager:
       limits:
         memory: 128Mi
 
+# ------- #
+
 # TODO Add comments about these values below
 schtack:
-
   additionalLabels: {}
+  grafanaDashboards: false
 
   clusterIssuers:
 
