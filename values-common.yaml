@@ -39,6 +39,7 @@ cert-manager:
       limits:
         memory: 128Mi
 
+# TODO Add comments about these values below
 schtack:
 
   additionalLabels: {}
@@ -57,6 +58,7 @@ schtack:
     letsencrypt:
       enabled: false
       acmeSolvers:
+      # TODO Add support for the acme solver configuration in the letsencrypt cluster issuers
       - http01:
           ingress: {}
       issuers:
