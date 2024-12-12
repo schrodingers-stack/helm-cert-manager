@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.1](https://github.com/schrodingers-stack/helm-cert-manager/compare/v0.1.0...v0.1.1) (2024-12-12)
+
+
+### Features
+
+* add value for creating Grafana dashboards ([b67b7e2](https://github.com/schrodingers-stack/helm-cert-manager/commit/b67b7e2b25def860e194b8d2d422bd643132652b))
+
+
+### Documentation
+
+* add another TODO to the values ([304c573](https://github.com/schrodingers-stack/helm-cert-manager/commit/304c573141f7dcb52f5947e47ab4b133db723161))
+
+
+### Continuous Integration
+
+* add config to enable Renovate ([09feb9f](https://github.com/schrodingers-stack/helm-cert-manager/commit/09feb9f1624019efd9e5575acfcac81b886755dd))
+
 ## 0.1.0 (2024-12-06)
 
 
