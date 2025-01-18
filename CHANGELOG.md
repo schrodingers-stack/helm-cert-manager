@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/schrodingers-stack/helm-cert-manager/compare/v0.1.1...v0.1.2) (2025-01-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** update helm release cert-manager to v1.16.3 ([#6](https://github.com/schrodingers-stack/helm-cert-manager/issues/6)) ([361f198](https://github.com/schrodingers-stack/helm-cert-manager/commit/361f198ba0f6f9a3ac00a6a4aff6ea9f89864246))
+
 ## [0.1.1](https://github.com/schrodingers-stack/helm-cert-manager/compare/v0.1.0...v0.1.1) (2024-12-12)
 
 

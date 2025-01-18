@@ -1,6 +1,6 @@
 apiVersion: v2
 name: cert-manager
-version: 0.1.1
+version: 0.1.2
 description: Helm chart to deploy cert-manager using the Schrödinger's Stack
 home: https://schtack.cloud
 dependencies:
