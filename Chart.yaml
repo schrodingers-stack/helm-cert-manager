@@ -6,4 +6,4 @@ home: https://schtack.cloud
 dependencies:
   - name: cert-manager
     repository: https://charts.jetstack.io
-    version: v1.16.3
+    version: v1.17.0
